@@ -9,9 +9,9 @@ Das Konzept bietet den Besuchern des Altonaer Museums ein erhöhtes Kulturerlebn
 
 Das passionierte Team besteht aus Musikliebhaber und Programmierern: Markus Wals, Tungi Dang, Boris Crismancich
 
-Verwendete Bilder: Die Schiffsporträt-Sammlung im Altonaer Museum
+###Bilder
+* Die Schiffsporträt-Sammlung im Altonaer Museum
 
-##Dependencies:
 ###Hardware
 * Raspberry Pi
 * Touch Display 7"
