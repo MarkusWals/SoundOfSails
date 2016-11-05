@@ -1,0 +1,1943 @@
+[
+    {
+        "id": "8a789b93.971048",
+        "type": "tab",
+        "label": "Image Classifiers"
+    },
+    {
+        "id": "650044d9.8b65fc",
+        "type": "comment",
+        "z": "8a789b93.971048",
+        "name": "TRAINING Threemast Classifier",
+        "info": "Api Key - US\n\n\n\n",
+        "x": 250,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "e66a6183.b9a7d",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "create a classifier",
+        "apikey": "__PWRD__",
+        "image-feature": "createClassifier",
+        "x": 582,
+        "y": 778,
+        "wires": [
+            [
+                "a241b3f5.99579"
+            ]
+        ]
+    },
+    {
+        "id": "dcb68933.dad538",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "retrieve classifiers list",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "retrieveClassifiersList",
+        "x": 580,
+        "y": 820.9999942779541,
+        "wires": [
+            [
+                "a241b3f5.99579"
+            ]
+        ]
+    },
+    {
+        "id": "42f525c.a9a7fdc",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "retrieve classifier details",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "retrieveClassifierDetails",
+        "x": 584,
+        "y": 867,
+        "wires": [
+            [
+                "a241b3f5.99579"
+            ]
+        ]
+    },
+    {
+        "id": "b24a84d0.95dab8",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "delete a classifier",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "deleteClassifier",
+        "x": 565,
+        "y": 919,
+        "wires": [
+            [
+                "a241b3f5.99579"
+            ]
+        ]
+    },
+    {
+        "id": "ddb76ae3.7cd648",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 133,
+        "y": 679,
+        "wires": [
+            [
+                "8edcfd57.c4e49"
+            ]
+        ]
+    },
+    {
+        "id": "c66f676e.ab7f78",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 142,
+        "y": 819,
+        "wires": [
+            [
+                "dcb68933.dad538"
+            ]
+        ]
+    },
+    {
+        "id": "3ff65744.a7dcb8",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 144,
+        "y": 867,
+        "wires": [
+            [
+                "9d4c42f9.607b9"
+            ]
+        ]
+    },
+    {
+        "id": "99449eb7.575b1",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 146,
+        "y": 917,
+        "wires": [
+            [
+                "15edd3b2.12940c"
+            ]
+        ]
+    },
+    {
+        "id": "aa7ad0da.bcb03",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "threemast_positive.zip",
+        "name": "threemast_positive.zip",
+        "x": 194.5,
+        "y": 728,
+        "wires": [
+            [
+                "915021e3.7868f"
+            ]
+        ]
+    },
+    {
+        "id": "49398687.dc73e8",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "threemast_negative.zip",
+        "name": "threemast_negative.zip",
+        "x": 196.5,
+        "y": 770.0000305175781,
+        "wires": [
+            [
+                "f5d03460.6636d8"
+            ]
+        ]
+    },
+    {
+        "id": "915021e3.7868f",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "set positives",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.threemast_positive_examples",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 393,
+        "y": 728,
+        "wires": [
+            [
+                "49398687.dc73e8"
+            ]
+        ]
+    },
+    {
+        "id": "f5d03460.6636d8",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "set negatives",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.negative_examples",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 391.5,
+        "y": 777.9999942779541,
+        "wires": [
+            [
+                "e66a6183.b9a7d"
+            ]
+        ]
+    },
+    {
+        "id": "8edcfd57.c4e49",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set name",
+        "func": "msg.params={'name':'threemast'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 277,
+        "y": 679,
+        "wires": [
+            [
+                "aa7ad0da.bcb03"
+            ]
+        ]
+    },
+    {
+        "id": "a241b3f5.99579",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "result",
+        "x": 822,
+        "y": 866.9999942779541,
+        "wires": []
+    },
+    {
+        "id": "9d4c42f9.607b9",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_id",
+        "func": "msg.params={'classifier_id':'threemast_1167630302'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 357.5,
+        "y": 867,
+        "wires": [
+            [
+                "42f525c.a9a7fdc"
+            ]
+        ]
+    },
+    {
+        "id": "15edd3b2.12940c",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_id",
+        "func": "msg.params={'classifier_id':'threemast_1167630302'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350.5,
+        "y": 918,
+        "wires": [
+            [
+                "b24a84d0.95dab8"
+            ]
+        ]
+    },
+    {
+        "id": "ed25415f.e7ffd",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 153.25,
+        "y": 1138.999994277954,
+        "wires": [
+            [
+                "86fc4094.7dfeb"
+            ]
+        ]
+    },
+    {
+        "id": "3ca53bbb.d1f554",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "ship_04.jpg",
+        "name": "ship_04.jpg",
+        "x": 561.25,
+        "y": 1231,
+        "wires": [
+            [
+                "3baa842.ea01c7c"
+            ]
+        ]
+    },
+    {
+        "id": "86fc4094.7dfeb",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_ids",
+        "func": "msg.params={};\nmsg.params[\"classifier_ids\"]=\"threemast_448399683\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 332.25,
+        "y": 1138,
+        "wires": [
+            [
+                "541e5731.5e6bf8"
+            ]
+        ]
+    },
+    {
+        "id": "fd70da99.01ac38",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "true",
+        "complete": "true",
+        "x": 879.2500152587891,
+        "y": 1265.9999389648438,
+        "wires": []
+    },
+    {
+        "id": "1563c730.c92d39",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 154.25,
+        "y": 1191.999994277954,
+        "wires": [
+            [
+                "77252393.f6d3ac"
+            ]
+        ]
+    },
+    {
+        "id": "77252393.f6d3ac",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set owners",
+        "func": "msg.params={};\nmsg.params[\"owners\"]=\"me\";\nmsg.params[\"classifier_ids\"]=\"threemast_448399683\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 323.25,
+        "y": 1192.999994277954,
+        "wires": [
+            [
+                "541e5731.5e6bf8"
+            ]
+        ]
+    },
+    {
+        "id": "670b6c00.ffd8b4",
+        "type": "comment",
+        "z": "8a789b93.971048",
+        "name": "Advanced Options",
+        "info": "build new Specific Classifier to be used.",
+        "x": 149.25,
+        "y": 1088.999994277954,
+        "wires": []
+    },
+    {
+        "id": "5f35b4a9.e9a7dc",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 152.25,
+        "y": 1243.999994277954,
+        "wires": [
+            [
+                "87b320e0.670e7"
+            ]
+        ]
+    },
+    {
+        "id": "87b320e0.670e7",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set threshold",
+        "func": "msg.params={};\nmsg.params[\"threshold\"]=\"0.3\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 324.25,
+        "y": 1245.999994277954,
+        "wires": [
+            [
+                "541e5731.5e6bf8"
+            ]
+        ]
+    },
+    {
+        "id": "1437e1dd.9bf00e",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 143,
+        "y": 963.7499942779541,
+        "wires": [
+            [
+                "56fb4d51.2e6134"
+            ]
+        ]
+    },
+    {
+        "id": "56fb4d51.2e6134",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "delete All classifiers",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "deleteAllClassifiers",
+        "x": 565,
+        "y": 966.7499942779541,
+        "wires": [
+            [
+                "a241b3f5.99579"
+            ]
+        ]
+    },
+    {
+        "id": "3baa842.ea01c7c",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "Classify an image",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 770.5,
+        "y": 1199.7500610351562,
+        "wires": [
+            [
+                "fd70da99.01ac38"
+            ]
+        ]
+    },
+    {
+        "id": "9eee27d7.0794e8",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "URL",
+        "topic": "",
+        "payload": "http://visual-recognition-demo.mybluemix.net/images/samples/2.jpg",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 120,
+        "y": 409,
+        "wires": [
+            [
+                "4eb1a096.124ef"
+            ]
+        ]
+    },
+    {
+        "id": "4eb1a096.124ef",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "Classify an image (en)",
+        "apikey": "__PWRD__",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 570,
+        "y": 409,
+        "wires": [
+            [
+                "72bf09b4.ab9458"
+            ]
+        ]
+    },
+    {
+        "id": "72bf09b4.ab9458",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "result",
+        "x": 780,
+        "y": 409,
+        "wires": []
+    },
+    {
+        "id": "fc592867.16df68",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 139,
+        "y": 448.0000009536743,
+        "wires": [
+            [
+                "8b5805e3.c06338"
+            ]
+        ]
+    },
+    {
+        "id": "8b5805e3.c06338",
+        "type": "http request",
+        "z": "8a789b93.971048",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "url": "https://visual-recognition-demo.mybluemix.net/images/samples/2.jpg",
+        "tls": "",
+        "x": 320,
+        "y": 449,
+        "wires": [
+            [
+                "4eb1a096.124ef"
+            ]
+        ]
+    },
+    {
+        "id": "33ac766d.c0fe7a",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "ship_01.jpg",
+        "name": "ship_01.jpg",
+        "x": 320,
+        "y": 489,
+        "wires": [
+            [
+                "4eb1a096.124ef"
+            ]
+        ]
+    },
+    {
+        "id": "65064d89.abec14",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 140,
+        "y": 489,
+        "wires": [
+            [
+                "33ac766d.c0fe7a"
+            ]
+        ]
+    },
+    {
+        "id": "f975b891.a4e9e8",
+        "type": "comment",
+        "z": "8a789b93.971048",
+        "name": "Image Analysis",
+        "info": "See corresponding Lab instructions in the link below :\n\n[Watson Visual Recognition](https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples/visual_recognition_v3)\n",
+        "x": 130,
+        "y": 369,
+        "wires": []
+    },
+    {
+        "id": "8df519e4.a0c178",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "ship_02.jpg",
+        "name": "ship_02.jpg",
+        "x": 320,
+        "y": 529,
+        "wires": [
+            [
+                "4eb1a096.124ef"
+            ]
+        ]
+    },
+    {
+        "id": "5eedb29e.850d4c",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 140,
+        "y": 529,
+        "wires": [
+            [
+                "8df519e4.a0c178"
+            ]
+        ]
+    },
+    {
+        "id": "be36494.70d9bb8",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "ship_03.jpg",
+        "name": "ship_03.jpg",
+        "x": 320,
+        "y": 569,
+        "wires": [
+            [
+                "4eb1a096.124ef"
+            ]
+        ]
+    },
+    {
+        "id": "c9bea1d2.eb10d",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 140,
+        "y": 569,
+        "wires": [
+            [
+                "be36494.70d9bb8"
+            ]
+        ]
+    },
+    {
+        "id": "541e5731.5e6bf8",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "ship_02.jpg",
+        "name": "ship_02.jpg",
+        "x": 561.36669921875,
+        "y": 1194.633306503296,
+        "wires": [
+            [
+                "3baa842.ea01c7c"
+            ]
+        ]
+    },
+    {
+        "id": "4c04fd78.593014",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "ship_01.jpg",
+        "name": "ship_01.jpg",
+        "x": 560.36669921875,
+        "y": 1158.633306503296,
+        "wires": [
+            [
+                "3baa842.ea01c7c"
+            ]
+        ]
+    },
+    {
+        "id": "8083f4d3.1f01d8",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 386.81248474121094,
+        "y": 149.81875610351562,
+        "wires": [
+            [
+                "ddfb58b9.151c78"
+            ]
+        ]
+    },
+    {
+        "id": "ddfb58b9.151c78",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set owners",
+        "func": "// initialise the counter to 0 if it doesn't exist already\nvar count = context.get('count')||0;\ncount += 1;\ncount %= 40;\n// store the value back\ncontext.set('count',count);\n// make it part of the outgoing msg object\nmsg.count = count;\n\nmsg.filename=\"Ship (\" + (count) + \").jpg\";\nmsg.params={};\nmsg.params[\"owners\"]=\"me\";\nmsg.params[\"classifier_ids\"]=\"threemast_872793386\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 555.8125,
+        "y": 150.81875610351562,
+        "wires": [
+            [
+                "326478ea.bd1528"
+            ]
+        ]
+    },
+    {
+        "id": "326478ea.bd1528",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "",
+        "name": "",
+        "x": 714.9291839599609,
+        "y": 149.4520721435547,
+        "wires": [
+            [
+                "19251fb6.0ad61"
+            ]
+        ]
+    },
+    {
+        "id": "19251fb6.0ad61",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "Threemast Classifier",
+        "apikey": "__PWRD__",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 923.0624847412109,
+        "y": 149.5688247680664,
+        "wires": [
+            [
+                "d7071e15.bb18c",
+                "2c7ddf05.1109f"
+            ]
+        ]
+    },
+    {
+        "id": "d7071e15.bb18c",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": false,
+        "console": "true",
+        "complete": "true",
+        "x": 1213.812484741211,
+        "y": 147.81869506835938,
+        "wires": []
+    },
+    {
+        "id": "2c7ddf05.1109f",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "",
+        "func": "if(msg.result.images.classifiers !== null)\n{\n    if(msg.result.images[0].classifiers[0].classes[0].score) {\n        msg.payload = msg.result.images[0].classifiers[0].classes[0].score;\n        return msg;\n    } else {\n        msg.payload = 0\n        return msg;\n    }\n} else {\n    msg.payload = 0\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1212.512435913086,
+        "y": 191.48748779296875,
+        "wires": [
+            [
+                "773be7ba.510148"
+            ]
+        ]
+    },
+    {
+        "id": "773be7ba.510148",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "true",
+        "complete": "true",
+        "x": 1396.8125,
+        "y": 188.81875610351562,
+        "wires": []
+    },
+    {
+        "id": "12debc2d.627834",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 386.8125,
+        "y": 234.81875610351562,
+        "wires": [
+            [
+                "e811c2a7.59a05"
+            ]
+        ]
+    },
+    {
+        "id": "e811c2a7.59a05",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set owners",
+        "func": "// initialise the counter to 0 if it doesn't exist already\nvar count = context.get('count')||0;\ncount += 1;\ncount %= 40;\n// store the value back\ncontext.set('count',count);\n// make it part of the outgoing msg object\nmsg.count = count;\n\nmsg.filename=\"Ship (\" + (count) + \").jpg\";\n\nmsg.params={};\nmsg.params[\"owners\"]=\"me\";\nmsg.params[\"classifier_ids\"]=\"twomast_17832223\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 555.8125,
+        "y": 235.81875610351562,
+        "wires": [
+            [
+                "cff965ef.3a1a08"
+            ]
+        ]
+    },
+    {
+        "id": "cff965ef.3a1a08",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "",
+        "name": "",
+        "x": 714.9291839599609,
+        "y": 234.4520721435547,
+        "wires": [
+            [
+                "539816e9.80f0b8"
+            ]
+        ]
+    },
+    {
+        "id": "539816e9.80f0b8",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "Twomast Classifier",
+        "apikey": "__PWRD__",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 913.0624847412109,
+        "y": 234.5688247680664,
+        "wires": [
+            [
+                "724543df.c9e51c",
+                "5dce2779.8629f8"
+            ]
+        ]
+    },
+    {
+        "id": "724543df.c9e51c",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": false,
+        "console": "true",
+        "complete": "true",
+        "x": 1213.812484741211,
+        "y": 232.81869506835938,
+        "wires": []
+    },
+    {
+        "id": "5dce2779.8629f8",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "",
+        "func": "if(msg.result.images.classifiers !== null)\n{\n    if(msg.result.images[0].classifiers[0].classes[0].score) {\n        msg.payload = msg.result.images[0].classifiers[0].classes[0].score;\n        return msg;\n    } else {\n        msg.payload = 0\n        return msg;\n    }\n} else {\n    msg.payload = 0\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1212.512435913086,
+        "y": 276.48748779296875,
+        "wires": [
+            [
+                "d843b81f.58f568"
+            ]
+        ]
+    },
+    {
+        "id": "d843b81f.58f568",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "true",
+        "complete": "true",
+        "x": 1396.8125,
+        "y": 273.8187561035156,
+        "wires": []
+    },
+    {
+        "id": "40663aee.9c0a74",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 389.81248474121094,
+        "y": 324.8187561035156,
+        "wires": [
+            [
+                "ea07ccf5.83dd9"
+            ]
+        ]
+    },
+    {
+        "id": "ea07ccf5.83dd9",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set Classifier",
+        "func": "// initialise the counter to 0 if it doesn't exist already\nvar count = context.get('count')||0;\ncount += 1;\ncount %= 40;\n// store the value back\ncontext.set('count',count);\n// make it part of the outgoing msg object\nmsg.count = count;\n\nmsg.filename=\"Ship (\" + (count) + \").jpg\";\n\nmsg.params={};\nmsg.params[\"owners\"]=\"me\";\nmsg.params[\"classifier_ids\"]=\"onemast_261820213\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 558.8124847412109,
+        "y": 325.8187561035156,
+        "wires": [
+            [
+                "74b90621.7a2f98"
+            ]
+        ]
+    },
+    {
+        "id": "74b90621.7a2f98",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "",
+        "name": "",
+        "x": 717.9291687011719,
+        "y": 324.4520721435547,
+        "wires": [
+            [
+                "cbbd1d0a.de65a"
+            ]
+        ]
+    },
+    {
+        "id": "cbbd1d0a.de65a",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "Storm Classifier",
+        "apikey": "__PWRD__",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 906.0624694824219,
+        "y": 324.5688247680664,
+        "wires": [
+            [
+                "9de42f6d.314a2",
+                "d3951dfa.5f82c"
+            ]
+        ]
+    },
+    {
+        "id": "9de42f6d.314a2",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": false,
+        "console": "true",
+        "complete": "true",
+        "x": 1216.8124694824219,
+        "y": 322.8186950683594,
+        "wires": []
+    },
+    {
+        "id": "d3951dfa.5f82c",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "",
+        "func": "if(msg.result.images.classifiers !== null)\n{\n    if(msg.result.images[0].classifiers[0].classes[0].score) {\n        msg.payload = msg.result.images[0].classifiers[0].classes[0].score;\n        return msg;\n    } else {\n        msg.payload = 0\n        return msg;\n    }\n} else {\n    msg.payload = 0\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1215.5124206542969,
+        "y": 366.48748779296875,
+        "wires": [
+            [
+                "16431236.a810ee"
+            ]
+        ]
+    },
+    {
+        "id": "16431236.a810ee",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "true",
+        "complete": "true",
+        "x": 1399.812484741211,
+        "y": 363.8187561035156,
+        "wires": []
+    },
+    {
+        "id": "ffe08676.cc7588",
+        "type": "comment",
+        "z": "8a789b93.971048",
+        "name": "TRAINING Twomast Classifier",
+        "info": "",
+        "x": 1168.8125,
+        "y": 646.8187255859375,
+        "wires": []
+    },
+    {
+        "id": "872350c6.ccf3d",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "create a classifier",
+        "apikey": "__PWRD__",
+        "image-feature": "createClassifier",
+        "x": 1500.812484741211,
+        "y": 782.8187026977539,
+        "wires": [
+            [
+                "d7578590.6a6f68"
+            ]
+        ]
+    },
+    {
+        "id": "39bb4c55.f51bb4",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "retrieve classifiers list",
+        "apikey": "c5c6200b533752538fbaf2a9a525f2a00cd16a79",
+        "image-feature": "retrieveClassifiersList",
+        "x": 1508.8125,
+        "y": 827.8187198638916,
+        "wires": [
+            [
+                "d7578590.6a6f68"
+            ]
+        ]
+    },
+    {
+        "id": "6102419d.2709e",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "retrieve classifier details",
+        "apikey": "c5c6200b533752538fbaf2a9a525f2a00cd16a79",
+        "image-feature": "retrieveClassifierDetails",
+        "x": 1512.8125,
+        "y": 873.8187255859375,
+        "wires": [
+            [
+                "d7578590.6a6f68"
+            ]
+        ]
+    },
+    {
+        "id": "e736c081.e1245",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "delete a classifier",
+        "apikey": "c5c6200b533752538fbaf2a9a525f2a00cd16a79",
+        "image-feature": "deleteClassifier",
+        "x": 1493.8125,
+        "y": 925.8187255859375,
+        "wires": [
+            [
+                "d7578590.6a6f68"
+            ]
+        ]
+    },
+    {
+        "id": "643c03c9.61d8ac",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1061.8125,
+        "y": 685.8187255859375,
+        "wires": [
+            [
+                "35f60120.5b3d7e"
+            ]
+        ]
+    },
+    {
+        "id": "b80d83b2.6b1d2",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1070.8125,
+        "y": 825.8187255859375,
+        "wires": [
+            [
+                "39bb4c55.f51bb4"
+            ]
+        ]
+    },
+    {
+        "id": "a3a838a0.b89dc8",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1072.8125,
+        "y": 873.8187255859375,
+        "wires": [
+            [
+                "e7cb41ce.6082b"
+            ]
+        ]
+    },
+    {
+        "id": "f09ed3d.6df393",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1074.8125,
+        "y": 923.8187255859375,
+        "wires": [
+            [
+                "52f41b7a.ce6c64"
+            ]
+        ]
+    },
+    {
+        "id": "bf8be12c.e89db",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "twomast_positive.zip",
+        "name": "",
+        "x": 1123.3125,
+        "y": 734.8187255859375,
+        "wires": [
+            [
+                "61b92577.92c94c"
+            ]
+        ]
+    },
+    {
+        "id": "6719e29e.9d3bcc",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "twomast_negative.zip",
+        "name": "",
+        "x": 1125.3125,
+        "y": 776.8187561035156,
+        "wires": [
+            [
+                "4a6c06e.1b610f8"
+            ]
+        ]
+    },
+    {
+        "id": "61b92577.92c94c",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "set positives",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.threemast_positive_examples",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1321.8125,
+        "y": 734.8187255859375,
+        "wires": [
+            [
+                "6719e29e.9d3bcc"
+            ]
+        ]
+    },
+    {
+        "id": "4a6c06e.1b610f8",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "set negatives",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.negative_examples",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320.3125,
+        "y": 784.8187198638916,
+        "wires": [
+            [
+                "872350c6.ccf3d"
+            ]
+        ]
+    },
+    {
+        "id": "35f60120.5b3d7e",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set name",
+        "func": "msg.params={'name':'twomast'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1205.8125,
+        "y": 685.8187255859375,
+        "wires": [
+            [
+                "bf8be12c.e89db"
+            ]
+        ]
+    },
+    {
+        "id": "d7578590.6a6f68",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "result",
+        "x": 1750.8125,
+        "y": 873.8187198638916,
+        "wires": []
+    },
+    {
+        "id": "e7cb41ce.6082b",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_id",
+        "func": "msg.params={'classifier_id':'threemast_1167630302'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1286.3125,
+        "y": 873.8187255859375,
+        "wires": [
+            [
+                "6102419d.2709e"
+            ]
+        ]
+    },
+    {
+        "id": "52f41b7a.ce6c64",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_id",
+        "func": "msg.params={'classifier_id':'threemast_1167630302'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1279.3125,
+        "y": 924.8187255859375,
+        "wires": [
+            [
+                "e736c081.e1245"
+            ]
+        ]
+    },
+    {
+        "id": "5363fded.997a84",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1071.8125,
+        "y": 970.5687198638916,
+        "wires": [
+            [
+                "30b17862.997c68"
+            ]
+        ]
+    },
+    {
+        "id": "30b17862.997c68",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "delete All classifiers",
+        "apikey": "c5c6200b533752538fbaf2a9a525f2a00cd16a79",
+        "image-feature": "deleteAllClassifiers",
+        "x": 1493.8125,
+        "y": 973.5687198638916,
+        "wires": [
+            [
+                "d7578590.6a6f68"
+            ]
+        ]
+    },
+    {
+        "id": "6a881b7.f1b1be4",
+        "type": "comment",
+        "z": "8a789b93.971048",
+        "name": "TRAINING Weather Classifier",
+        "info": "",
+        "x": 2119.21240234375,
+        "y": 654.8187255859375,
+        "wires": []
+    },
+    {
+        "id": "eae59db9.d1887",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "create a classifier",
+        "apikey": "95f20d40f439dc11d47ccb8c4d2e11c1994086ab",
+        "image-feature": "createClassifier",
+        "x": 2461.21240234375,
+        "y": 792.8187255859375,
+        "wires": [
+            [
+                "e52aa010.30506"
+            ]
+        ]
+    },
+    {
+        "id": "1214a45f.c292dc",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "retrieve classifiers list",
+        "apikey": "95f20d40f439dc11d47ccb8c4d2e11c1994086ab",
+        "image-feature": "retrieveClassifiersList",
+        "x": 2459.21240234375,
+        "y": 835.8187198638916,
+        "wires": [
+            [
+                "e52aa010.30506"
+            ]
+        ]
+    },
+    {
+        "id": "3619bdde.61cfd2",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "retrieve classifier details",
+        "apikey": "95f20d40f439dc11d47ccb8c4d2e11c1994086ab",
+        "image-feature": "retrieveClassifierDetails",
+        "x": 2463.21240234375,
+        "y": 881.8187255859375,
+        "wires": [
+            [
+                "e52aa010.30506"
+            ]
+        ]
+    },
+    {
+        "id": "a47452fb.a876",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "delete a classifier",
+        "apikey": "95f20d40f439dc11d47ccb8c4d2e11c1994086ab",
+        "image-feature": "deleteClassifier",
+        "x": 2444.21240234375,
+        "y": 933.8187255859375,
+        "wires": [
+            [
+                "e52aa010.30506"
+            ]
+        ]
+    },
+    {
+        "id": "29dba773.6d8848",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 2012.21240234375,
+        "y": 693.8187255859375,
+        "wires": [
+            [
+                "562cc5ad.17119c"
+            ]
+        ]
+    },
+    {
+        "id": "eef7888e.c5f1d8",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 2021.21240234375,
+        "y": 833.8187255859375,
+        "wires": [
+            [
+                "1214a45f.c292dc"
+            ]
+        ]
+    },
+    {
+        "id": "ed612b39.2d8328",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 2023.21240234375,
+        "y": 881.8187255859375,
+        "wires": [
+            [
+                "918cc3fa.cbdd2"
+            ]
+        ]
+    },
+    {
+        "id": "aa3e1a5f.360e58",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 2025.21240234375,
+        "y": 931.8187255859375,
+        "wires": [
+            [
+                "bbdfb427.892468"
+            ]
+        ]
+    },
+    {
+        "id": "1dd50abf.684085",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "storm_positive.zip",
+        "name": "",
+        "x": 2063.71240234375,
+        "y": 742.8187255859375,
+        "wires": [
+            [
+                "b36bdd74.64db3"
+            ]
+        ]
+    },
+    {
+        "id": "19e9df38.f3ac91",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "storm_negative.zip",
+        "name": "",
+        "x": 2065.71240234375,
+        "y": 784.8187561035156,
+        "wires": [
+            [
+                "5a6a6987.3938b8"
+            ]
+        ]
+    },
+    {
+        "id": "b36bdd74.64db3",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "set positives",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.threemast_positive_examples",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2272.21240234375,
+        "y": 742.8187255859375,
+        "wires": [
+            [
+                "19e9df38.f3ac91"
+            ]
+        ]
+    },
+    {
+        "id": "5a6a6987.3938b8",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "set negatives",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.negative_examples",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2270.71240234375,
+        "y": 792.8187198638916,
+        "wires": [
+            [
+                "eae59db9.d1887"
+            ]
+        ]
+    },
+    {
+        "id": "562cc5ad.17119c",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set name",
+        "func": "msg.params={'name':'storm'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2156.21240234375,
+        "y": 693.8187255859375,
+        "wires": [
+            [
+                "1dd50abf.684085"
+            ]
+        ]
+    },
+    {
+        "id": "e52aa010.30506",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "result",
+        "x": 2701.21240234375,
+        "y": 881.8187198638916,
+        "wires": []
+    },
+    {
+        "id": "918cc3fa.cbdd2",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_id",
+        "func": "msg.params={'classifier_id':'threemast_1167630302'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2236.71240234375,
+        "y": 881.8187255859375,
+        "wires": [
+            [
+                "3619bdde.61cfd2"
+            ]
+        ]
+    },
+    {
+        "id": "bbdfb427.892468",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "set classifier_id",
+        "func": "msg.params={'classifier_id':'threemast_1167630302'};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2229.71240234375,
+        "y": 932.8187255859375,
+        "wires": [
+            [
+                "a47452fb.a876"
+            ]
+        ]
+    },
+    {
+        "id": "4c1fb8c2.9391e8",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 2022.21240234375,
+        "y": 978.5687198638916,
+        "wires": [
+            [
+                "514e1d81.fce2f4"
+            ]
+        ]
+    },
+    {
+        "id": "514e1d81.fce2f4",
+        "type": "visual-recognition-util-v3",
+        "z": "8a789b93.971048",
+        "name": "delete All classifiers",
+        "apikey": "95f20d40f439dc11d47ccb8c4d2e11c1994086ab",
+        "image-feature": "deleteAllClassifiers",
+        "x": 2444.21240234375,
+        "y": 981.5687198638916,
+        "wires": [
+            [
+                "e52aa010.30506"
+            ]
+        ]
+    },
+    {
+        "id": "a5b7eac8.3a7998",
+        "type": "http in",
+        "z": "8a789b93.971048",
+        "name": "",
+        "url": "/reco",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 100.8125,
+        "y": 1388.418701171875,
+        "wires": [
+            [
+                "84f79653.678a58"
+            ]
+        ]
+    },
+    {
+        "id": "d0105cf5.e4638",
+        "type": "http response",
+        "z": "8a789b93.971048",
+        "name": "HTTP Response",
+        "x": 768.8125,
+        "y": 1453.418701171875,
+        "wires": []
+    },
+    {
+        "id": "84f79653.678a58",
+        "type": "switch",
+        "z": "8a789b93.971048",
+        "name": "Check image param",
+        "property": "payload.imageurl",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 224.8125,
+        "y": 1450.418701171875,
+        "wires": [
+            [
+                "1940672c.bb1b29"
+            ],
+            [
+                "420cbdbc.38e314"
+            ]
+        ]
+    },
+    {
+        "id": "1940672c.bb1b29",
+        "type": "template",
+        "z": "8a789b93.971048",
+        "name": "Get Image URL",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<html>\n<head><title>Watson Visual Recognition on Node-RED</title></head>\n<body>\n<h1>Welcome to the Watson Visual Recognition Demo on Node-RED</h1>\n<h2>Select an image URL</h2>\n<form  action=\"{{req._parsedUrl.pathname}}\">\n    <img src=\"http://visual-recognition-demo.mybluemix.net/images/horses.jpg\" height='100'/>\n    <img src=\"http://visual-recognition-demo.mybluemix.net/images/73388.jpg\" height='100'/>\n    <img src=\"http://visual-recognition-demo.mybluemix.net/images/26537.jpg\" height='100'/>\n    <img src=\"http://visual-recognition-demo.mybluemix.net/images/4068.jpg\" height='100'/>\n    <br/>Copy above image location URL or enter any image URL:<br/>\n    <input type=\"text\" name=\"imageurl\"/>\n    <input type=\"submit\" value=\"Analyze\"/>\n</form>\n</body>\n</html>",
+        "x": 518.8125,
+        "y": 1419.418701171875,
+        "wires": [
+            [
+                "d0105cf5.e4638"
+            ]
+        ]
+    },
+    {
+        "id": "4eab5433.fa409c",
+        "type": "template",
+        "z": "8a789b93.971048",
+        "name": "Report",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<html>\n<head><title>Watson Visual Recognition on Node-RED</title></head>\n<body>\n<h1>Node-RED Watson Visual Recognition output</h1>\n<p>Analyzed image: {{payload}}<br/><img src=\"{{payload}}\" height='100'/></p>\n<table border='1'>\n    <thead><tr><th>Name</th><th>Score</th></tr></thead>\n{{#labels}}\n  <tr><td><b>{{label_name}}</b></td><td><i>{{label_score}}</i></td></tr>\n{{/labels}}\n</table>\n<form  action=\"{{req._parsedUrl.pathname}}\">\n    <input type=\"submit\" value=\"Try again\"/>\n</form>\n</body>\n</html>",
+        "x": 613.8125,
+        "y": 1487.418701171875,
+        "wires": [
+            [
+                "d0105cf5.e4638"
+            ]
+        ]
+    },
+    {
+        "id": "420cbdbc.38e314",
+        "type": "change",
+        "z": "8a789b93.971048",
+        "name": "Extract img URL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "to": "msg.payload.imageurl"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310.8125,
+        "y": 1508.418701171875,
+        "wires": [
+            [
+                "2efacf3.ac04f3"
+            ]
+        ]
+    },
+    {
+        "id": "d7981d33.c39dc",
+        "type": "comment",
+        "z": "8a789b93.971048",
+        "name": "!!Make sure you bind Visual Recognition Service to Node-RED App!!",
+        "info": "When running in BlueMix, the credentials for the service will be filled-in from BMix credentials management.\nFor this to work, the Visual Recognition Service has to be bound to the Node-RED application.\n",
+        "x": 489.8125,
+        "y": 1605.418701171875,
+        "wires": []
+    },
+    {
+        "id": "dd766c94.da35f",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "labels",
+        "x": 774.8125,
+        "y": 1537.418701171875,
+        "wires": []
+    },
+    {
+        "id": "11acee70.83a1a2",
+        "type": "inject",
+        "z": "8a789b93.971048",
+        "name": "binary buffer",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 375.26704025268555,
+        "y": 58.81878852844238,
+        "wires": [
+            [
+                "d73ec5e.bfc6038"
+            ]
+        ]
+    },
+    {
+        "id": "7268d772.887228",
+        "type": "dropbox",
+        "z": "8a789b93.971048",
+        "dropbox": "",
+        "filename": "",
+        "name": "",
+        "x": 716.9291687011719,
+        "y": 60.45210266113281,
+        "wires": [
+            [
+                "42eb8240.0a507c"
+            ]
+        ]
+    },
+    {
+        "id": "42eb8240.0a507c",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 915.0624694824219,
+        "y": 60.56885528564453,
+        "wires": [
+            [
+                "15dc7c88.8cc303",
+                "49cfb8cb.80c668"
+            ]
+        ]
+    },
+    {
+        "id": "15dc7c88.8cc303",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": false,
+        "console": "true",
+        "complete": "true",
+        "x": 1215.8124694824219,
+        "y": 58.8187255859375,
+        "wires": []
+    },
+    {
+        "id": "49cfb8cb.80c668",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "",
+        "func": "if(msg.result.images.classifiers !== null)\n{\n    if(msg.result.images[0].classifiers[0].classes[0].score) {\n        msg.payload = msg.result.images[0].classifiers[0].classes[0].score;\n        return msg;\n    } else {\n        msg.payload = 0\n        return msg;\n    }\n} else {\n    msg.payload = 0\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1214.5124206542969,
+        "y": 102.48751831054688,
+        "wires": [
+            [
+                "c145a6ca.bcfb98"
+            ]
+        ]
+    },
+    {
+        "id": "c145a6ca.bcfb98",
+        "type": "debug",
+        "z": "8a789b93.971048",
+        "name": "",
+        "active": true,
+        "console": "true",
+        "complete": "true",
+        "x": 1398.812484741211,
+        "y": 99.81878662109375,
+        "wires": []
+    },
+    {
+        "id": "2efacf3.ac04f3",
+        "type": "visual-recognition-v3",
+        "z": "8a789b93.971048",
+        "name": "",
+        "apikey": "5c542d6b5bf9ffe9306826d4a349e822a3d199fb",
+        "image-feature": "classifyImage",
+        "lang": "en",
+        "x": 479.81248474121094,
+        "y": 1554.6185913085938,
+        "wires": [
+            [
+                "4eab5433.fa409c",
+                "dd766c94.da35f"
+            ]
+        ]
+    },
+    {
+        "id": "d73ec5e.bfc6038",
+        "type": "function",
+        "z": "8a789b93.971048",
+        "name": "count Ships",
+        "func": "// initialise the counter to 0 if it doesn't exist already\nvar count = context.get('count')||0;\ncount += 1;\ncount %= 40;\n// store the value back\ncontext.set('count',count);\n// make it part of the outgoing msg object\nmsg.count = count;\n\nmsg.filename=\"Ship (\" + (count) + \").jpg\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 546.0113067626953,
+        "y": 55.28977727890015,
+        "wires": [
+            [
+                "7268d772.887228"
+            ]
+        ]
+    }
+]
