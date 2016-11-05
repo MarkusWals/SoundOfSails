@@ -11,6 +11,22 @@ Das passionierte Team besteht aus Musikliebhaber und Programmierern: Markus Wals
 
 Verwendete Bilder: Die Schiffsporträt-Sammlung im Altonaer Museum
 
+##Dependencies:
+###Hardware
+Raspberry Pi
+Touch Display 7"
+Lautsprecher
+Internet Verindung
+
+###Software
+NodeJS
+Node-Red
+node-red-node-watson
+node-red-node-daemon
+
+###IBM Bluemix
+Visual Recognition Service Api Key
+Alchemy Api Key
 
 ##Ausblick:
 Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden.
