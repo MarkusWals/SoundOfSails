@@ -13,27 +13,27 @@ Verwendete Bilder: Die Schiffsporträt-Sammlung im Altonaer Museum
 
 ##Dependencies:
 ###Hardware
-Raspberry Pi
-Touch Display 7"
-Lautsprecher
-Internet Verindung
+* Raspberry Pi
+* Touch Display 7"
+* Lautsprecher
+* Internet Verindung
 
 ###Software
-NodeJS
-Node-Red
-node-red-node-watson
-node-red-node-daemon
+* NodeJS
+* Node-Red
+* node-red-node-watson
+* node-red-node-daemon
 
 ###IBM Bluemix
-Visual Recognition Service Api Key
-Alchemy Api Key
+* Visual Recognition Service Api Key
+* Alchemy Api Key
 
 ##Ausblick:
-Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden.
+* Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden.
 
-Erzeugen weiterer Classifier und weiteres Training 
+* Erzeugen weiterer Classifier und weiteres Training 
 
-Das vorerst hardgecodete Mapping wird weiter an die Classifier angepasst
+* Das vorerst hardgecodete Mapping wird weiter an die Classifier angepasst
 
 
 ##Contribute
