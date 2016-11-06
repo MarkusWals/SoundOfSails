@@ -7,10 +7,14 @@ Das Konzept bietet den Besuchern des Altonaer Museums ein erhöhtes Kulturerlebn
 
 Ähnlich wie ein Theaterpianist,der in den Goldenen Zwanzigern Kinofilme untermalt hat, ist unsere Vision mit Hilfe von künstlicher Intelligenz eine smarte Musikuntermalung für Bild und Film zu schaffen.
 
-Das passionierte Team besteht aus Musikliebhaber und Programmierern: Markus Wals, Tungi Dang, Boris Crismancich
+Das passionierte Team besteht aus Musikliebhabern und Programmierern: Markus Wals, Tungi Dang, Boris Crismancich
+
+
+##Überblick:
 
 ###Bilder
 * Die Schiffsporträt-Sammlung im Altonaer Museum und deren Metadaten im xml Format https://www.dropbox.com/sh/c005ttp0va3zlpf/AACi04xncV2tBZefuRhHmngXa?dl=0
+![Schiffsporträt (Altonaer Museum)](https://www.deutsche-digitale-bibliothek.de/static/files/styles/asset_image_full/public/assets/images/beispiele-kulturdatensaetze.jpg?itok=0Yrb9nRK "Schiffsporträt (Altonaer Museum)")
 * Über 1000 Bilder als Trainings Daten für die Image Classifier der Visual Recocnition Api in Bluemix https://www.dropbox.com/sh/dt296dwafg47pd8/AAAqFLy_4CzsqDwpMJVZpVREa?dl=0
 
 ###Musik
@@ -29,8 +33,9 @@ Das passionierte Team besteht aus Musikliebhaber und Programmierern: Markus Wals
 * node-red-node-daemon
 
 ###IBM Bluemix
-* Visual Recognition Service Api Key
-* Alchemy Api Key
+* Visual Recognition Service - Bildanalyse
+* Alchemy Api - Metadatenanalyse
+
 
 ##Ausblick:
 * Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden. Somit kann die Applikation auch in der Cloud laufen und über das Internet Midi Patterns zu beliebigen PC's und Klangerzeugern streamen. 
@@ -38,6 +43,7 @@ Das passionierte Team besteht aus Musikliebhaber und Programmierern: Markus Wals
 ** http://nerds.de/en/loopbe1.html
 * Erzeugen weiterer Classifier und weiteres Training 
 * Das vorerst hardgecodete Mapping wird weiter an die Classifier angepasst
+
 
 ##Contribute
 Das Projekt lebt von Beiträgen aus der Open Source Community, wir suchen Entwickler und Musikbegeisterte um das Projekt weiterzuentwickeln. 
