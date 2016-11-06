@@ -12,10 +12,13 @@ Das passionierte Team besteht aus Musikliebhabern und Programmierern: Markus Wal
 
 ##Überblick:
 
+![Sound of Sails](https://scontent-vie1-1.xx.fbcdn.net/v/t35.0-12/14975800_10208041071441421_70397208_o.jpg?oh=eff3e53040e79d041c1e34db6bac182d&oe=5822471F "Gesamtkunstwerk")
+
 ###Bilder
 * Die Schiffsporträt-Sammlung im Altonaer Museum und deren Metadaten im xml Format https://www.dropbox.com/sh/c005ttp0va3zlpf/AACi04xncV2tBZefuRhHmngXa?dl=0
-![Schiffsporträt (Altonaer Museum)](https://www.deutsche-digitale-bibliothek.de/static/files/styles/asset_image_full/public/assets/images/beispiele-kulturdatensaetze.jpg?itok=0Yrb9nRK "Schiffsporträt (Altonaer Museum)")
 * Über 1000 Bilder als Trainings Daten für die Image Classifier der Visual Recocnition Api in Bluemix https://www.dropbox.com/sh/dt296dwafg47pd8/AAAqFLy_4CzsqDwpMJVZpVREa?dl=0
+
+![Schiffsporträt (Altonaer Museum)](https://codingdavinci.de/img/daten/AB05260-edit.jpg "Schiffsporträt (Altonaer Museum)")
 
 ###Musik
 * Audio Files die verschiedene Emotionen repräsentieren, später sollen hier Midi Patterns anstelle der Audio Daten verwendetet werden https://www.dropbox.com/sh/sqxcfngy33si90k/AADxZzWofXARNCv97R2WWEU5a?dl=0
