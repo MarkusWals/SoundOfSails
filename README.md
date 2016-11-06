@@ -7,10 +7,7 @@ Das Konzept bietet den Besuchern des Altonaer Museums ein erhöhtes Kulturerlebn
 
 Ähnlich wie ein Theaterpianist,der in den Goldenen Zwanzigern Kinofilme untermalt hat, ist unsere Vision mit Hilfe von künstlicher Intelligenz eine smarte Musikuntermalung für Bild und Film zu schaffen.
 
-Das passionierte Team besteht aus Musikliebhabern und Programmierern: 
-* Markus Wals, 
-* Tungi Dang, 
-* Boris Crismancich
+Das passionierte Team besteht aus Musikliebhabern und Programmierern: Markus Wals, Tungi Dang, Boris Crismancich
 
 
 ##Überblick:
@@ -47,18 +44,18 @@ https://www.dropbox.com/sh/sqxcfngy33si90k/AADxZzWofXARNCv97R2WWEU5a?dl=0
 
 
 ##Ausblick:
-* Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden. Somit kann die Applikation auch in der Cloud laufen und über das Internet Midi Patterns zu beliebigen PC's und Klangerzeugern streamen. 
+* Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden. Somit kann die Applikation auch in der Cloud laufen und über das Internet Midi Patterns zu beliebigen PC's und Klangerzeugern streamen. Hier einige Anregungen:
 ** http://www.tobias-erichsen.de/software/rtpmidi.html
 ** http://nerds.de/en/loopbe1.html
 * Erzeugen weiterer Classifier und weiteres Training 
-* Das vorerst hardgecodete Mapping wird weiter an die Classifier angepasst
+* Implementierung eines Algorithmus zum dynamischen Erzeugen von Midi Noten
 
 
 ##Contribute
 Das Projekt lebt von Beiträgen aus der Open Source Community, wir suchen Entwickler und Musikbegeisterte um das Projekt weiterzuentwickeln. 
 
 ####Kontakt:
-Markus Wals https://www.facebook.com/markus.wals.9,
-Tungi Dang https://www.facebook.com/tungi.haeids.mondaeis?fref=ts, 
-Boris Crismancich https://www.facebook.com/boris.crismancich?fref=ts
+* Markus Walshttps://www.facebook.com/markus.wals.9,
+* Tungi Dang https://www.facebook.com/tungi.haeids.mondaeis?fref=ts, 
+* Boris Crismancich https://www.facebook.com/boris.crismancich?fref=ts
 
