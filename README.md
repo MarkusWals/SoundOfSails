@@ -43,9 +43,7 @@ https://www.dropbox.com/sh/sqxcfngy33si90k/AADxZzWofXARNCv97R2WWEU5a?dl=0
 
 
 ##Ausblick:
-* Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden. Somit kann die Applikation auch in der Cloud laufen und über das Internet Midi Patterns zu beliebigen PC's und Klangerzeugern streamen. Hier einige Anregungen:
-** http://www.tobias-erichsen.de/software/rtpmidi.html
-** http://nerds.de/en/loopbe1.html
+* Aus den Ergebnissen der Bild und Metadatenanalyse werden Midi Noten generiert werden (neuer Node) und diese als virtuelles Midi Instrument an Apple Logic oder Ableton Live angeschlossen werden. Somit kann die Applikation auch in der Cloud laufen und über das Internet Midi Patterns zu beliebigen PC's und Klangerzeugern streamen. Hier einige Anregungen: http://www.tobias-erichsen.de/software/rtpmidi.html http://nerds.de/en/loopbe1.html
 * Erzeugen weiterer Classifier und weiteres Training 
 * Implementierung eines Algorithmus zum dynamischen Erzeugen von Midi Noten
 
@@ -54,7 +52,7 @@ https://www.dropbox.com/sh/sqxcfngy33si90k/AADxZzWofXARNCv97R2WWEU5a?dl=0
 Das Projekt lebt von Beiträgen aus der Open Source Community, wir suchen Entwickler und Musikbegeisterte um das Projekt weiterzuentwickeln. 
 
 ####Kontakt:
-* Markus Walshttps://www.facebook.com/markus.wals.9,
+* Markus Wals https://www.facebook.com/markus.wals.9,
 * Tungi Dang https://www.facebook.com/tungi.haeids.mondaeis?fref=ts, 
 * Boris Crismancich https://www.facebook.com/boris.crismancich?fref=ts
 
