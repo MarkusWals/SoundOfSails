@@ -36,6 +36,7 @@ https://www.dropbox.com/sh/sqxcfngy33si90k/AADxZzWofXARNCv97R2WWEU5a?dl=0
 * Node-Red
 * node-red-node-watson
 * node-red-node-daemon
+* node-red-contrib-midi
 
 ###IBM Bluemix
 * Visual Recognition Service - Bildanalyse
