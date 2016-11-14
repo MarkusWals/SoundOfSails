@@ -1,5 +1,5 @@
 # Sound of Sails
-![Sound of Sails](https://scontent-vie1-1.xx.fbcdn.net/v/t35.0-12/14975800_10208041071441421_70397208_o.jpg?oh=eff3e53040e79d041c1e34db6bac182d&oe=5822471F "Gesamtkunstwerk")
+![Sound of Sails](https://scontent-amt2-1.xx.fbcdn.net/t31.0-8/15025530_344890309199703_827626292561120189_o.jpg "Showcase")
 
 Künstliche Intelligenz kennt man bisher aus den Medien als eine fortschrittliche Technologie,die vorrangig bei Autonom fahrende Autos, intelligenten Smart Home Anwendungen oder personalisierter Werbung angewendet wird. Deshalb haben wir uns im Rahmen des Coding Da Vinci-Events zur Aufgabe genommen, das zu ändern, und mit den bereit gestellten Kultur-Metadaten- neue Kunst zu schaffen. Die Musik.
 
